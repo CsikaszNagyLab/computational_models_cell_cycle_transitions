@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sbml xmlns="http://www.sbml.org/sbml/level2/version4" level="2" version="4">
+  <model>
+    <listOfUnitDefinitions>
+      <unitDefinition id="time">
+        <listOfUnits>
+          <unit kind="second" scale="0" multiplier="1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="substance">
+        <listOfUnits>
+          <unit kind="mole" scale="-9"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="volume">
+        <listOfUnits>
+          <unit kind="litre"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="dimless">
+        <listOfUnits>
+          <unit kind="dimensionless"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="concentration">
+        <listOfUnits>
+          <unit kind="mole" scale="-9"/>
+          <unit kind="litre" exponent="-1"/>
+        </listOfUnits>
+      </unitDefinition>
+      <unitDefinition id="k_unit_2">
+        <listOfUnits>
+          <unit kind="second" exponent="-1" scale="0" multiplier="1"/>
+          <unit kind="mole" exponent="-1" scale="-9"/>
+          <unit kind="litre" exponent="1"/>
+        </listOfUnits>
+      </unitDefinition>
+    </listOfUnitDefinitions>
+    <listOfCompartments>
+      <compartment id="c" size="1.66053886312701E-15"/>
+    </listOfCompartments>
+    <listOfSpecies>
+      <species id="s_id0" name="Kon" compartment="c" initialConcentration="2" constant="false"/>
+      <species id="s_id1" name="Kint" compartment="c" initialConcentration="0" constant="false"/>
+      <species id="s_id2" name="Koff" compartment="c" initialConcentration="1" constant="false"/>
+      <species id="s_id3" name="Pon" compartment="c" initialConcentration="1" constant="false"/>
+      <species id="s_id4" name="Pint" compartment="c" initialConcentration="0" constant="false"/>
+      <species id="s_id5" name="Poff" compartment="c" initialConcentration="2" constant="false"/>
+    </listOfSpecies>
+    <listOfReactions>
+      <reaction id="r_id6" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s_id2" stoichiometry="1"/>
+          <speciesReference species="s_id0" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s_id1" stoichiometry="1"/>
+          <speciesReference species="s_id0" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci>c_size</ci>
+              <ci>k</ci>
+              <ci>s_id2</ci>
+              <ci>s_id0</ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="c_size" value="1.66053886312701E-15" units="volume"/>
+            <parameter id="k" value="1" units="k_unit_2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_id7" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s_id1" stoichiometry="1"/>
+          <speciesReference species="s_id0" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s_id0" stoichiometry="2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci>c_size</ci>
+              <ci>k</ci>
+              <ci>s_id1</ci>
+              <ci>s_id0</ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="c_size" value="1.66053886312701E-15" units="volume"/>
+            <parameter id="k" value="1" units="k_unit_2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_id8" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s_id0" stoichiometry="1"/>
+          <speciesReference species="s_id3" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s_id1" stoichiometry="1"/>
+          <speciesReference species="s_id3" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci>c_size</ci>
+              <ci>k</ci>
+              <ci>s_id0</ci>
+              <ci>s_id3</ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="c_size" value="1.66053886312701E-15" units="volume"/>
+            <parameter id="k" value="1" units="k_unit_2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_id9" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s_id1" stoichiometry="1"/>
+          <speciesReference species="s_id3" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s_id2" stoichiometry="1"/>
+          <speciesReference species="s_id3" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci>c_size</ci>
+              <ci>k</ci>
+              <ci>s_id1</ci>
+              <ci>s_id3</ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="c_size" value="1.66053886312701E-15" units="volume"/>
+            <parameter id="k" value="1" units="k_unit_2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_id10" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s_id5" stoichiometry="1"/>
+          <speciesReference species="s_id3" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s_id4" stoichiometry="1"/>
+          <speciesReference species="s_id3" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci>c_size</ci>
+              <ci>k</ci>
+              <ci>s_id5</ci>
+              <ci>s_id3</ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="c_size" value="1.66053886312701E-15" units="volume"/>
+            <parameter id="k" value="1" units="k_unit_2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_id11" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s_id4" stoichiometry="1"/>
+          <speciesReference species="s_id3" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s_id3" stoichiometry="2"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci>c_size</ci>
+              <ci>k</ci>
+              <ci>s_id4</ci>
+              <ci>s_id3</ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="c_size" value="1.66053886312701E-15" units="volume"/>
+            <parameter id="k" value="1" units="k_unit_2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_id12" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s_id3" stoichiometry="1"/>
+          <speciesReference species="s_id0" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s_id4" stoichiometry="1"/>
+          <speciesReference species="s_id0" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci>c_size</ci>
+              <ci>k</ci>
+              <ci>s_id3</ci>
+              <ci>s_id0</ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="c_size" value="1.66053886312701E-15" units="volume"/>
+            <parameter id="k" value="1" units="k_unit_2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+      <reaction id="r_id13" reversible="false">
+        <listOfReactants>
+          <speciesReference species="s_id4" stoichiometry="1"/>
+          <speciesReference species="s_id0" stoichiometry="1"/>
+        </listOfReactants>
+        <listOfProducts>
+          <speciesReference species="s_id5" stoichiometry="1"/>
+          <speciesReference species="s_id0" stoichiometry="1"/>
+        </listOfProducts>
+        <kineticLaw>
+          <math xmlns="http://www.w3.org/1998/Math/MathML">
+            <apply>
+              <times/>
+              <ci>c_size</ci>
+              <ci>k</ci>
+              <ci>s_id4</ci>
+              <ci>s_id0</ci>
+            </apply>
+          </math>
+          <listOfParameters>
+            <parameter id="c_size" value="1.66053886312701E-15" units="volume"/>
+            <parameter id="k" value="1" units="k_unit_2"/>
+          </listOfParameters>
+        </kineticLaw>
+      </reaction>
+    </listOfReactions>
+  </model>
+</sbml>
